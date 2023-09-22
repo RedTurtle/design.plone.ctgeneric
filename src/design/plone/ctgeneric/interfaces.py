@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
+from design.plone.contenttypes.interfaces import IDesignPloneContenttypesLayer
 
-from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
-
-class IDesignPloneCtgenericLayer(IDefaultBrowserLayer):
+class IDesignPloneCtgenericLayer(IDesignPloneContenttypesLayer):
     """Marker interface that defines a browser layer."""
