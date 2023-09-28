@@ -6,8 +6,8 @@
 >
 
   <property name="behaviors" purge="False"> 
-    <element value="design.plone.contenttypes.behavior.argomenti"/>
     <element value="design.plone.contenttypes.behavior.news_v2"/>
+    <element value="design.plone.contenttypes.behavior.argomenti"/>
     <element value="design.plone.contenttypes.behavior.news" remove="True" />
     <element value="design.plone.contenttypes.behavior.argomenti_news" remove="True" />
     <element value="collective.taxonomy.generated.tipologia_notizia" remove="True" />

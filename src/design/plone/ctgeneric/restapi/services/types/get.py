@@ -41,9 +41,9 @@ class TypesGet(BaseGet):
 
     def customize_uo_schema(self, result):
         """
-        Tolgo l'obbligatorietà forzata dal v3
+        Tolgo l'obbligatorietà forzata dal v3 e invalido la modifica
         """
-        schema = super().customize_uo_schema(result=result)
+        schema = result
 
         fields = ["description"]
 

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from design.plone.contenttypes import _
 from design.plone.contenttypes.interfaces.persona import IPersona
+from plone.app.dexterity import textindexer
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.namedfile import field
 from plone.supermodel import model
@@ -106,6 +107,34 @@ class IPersonaV2(model.Schema):
             default="Inserire un file contenente l'atto di nomina della" " persona.",
         ),
     )
+
+    # custom fieldsets
+    model.fieldset(
+        "ruolo",
+        label=_("ruolo_label", default="Ruolo"),
+        fields=[
+            "ruolo",
+            "data_conclusione_incarico",
+            "tipologia_persona",
+            "data_insediamento",
+        ],
+    )
+    model.fieldset(
+        "contatti",
+        label=_("contatti_label", default="Contatti"),
+        fields=["telefono", "fax", "email"],
+    )
+    model.fieldset(
+        "documenti",
+        label=_("documenti_label", default="Documenti"),
+        fields=["curriculum_vitae", "atto_nomina"],
+    )
+    # SearchableText fields
+    textindexer.searchable("ruolo")
+    textindexer.searchable("tipologia_persona")
+    textindexer.searchable("telefono")
+    textindexer.searchable("fax")
+    textindexer.searchable("email")
 
 
 @implementer(IPersonaV2)

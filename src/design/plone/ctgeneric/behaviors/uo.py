@@ -2,6 +2,8 @@
 from collective.volto.blocksfield.field import BlocksField
 from design.plone.contenttypes import _
 from design.plone.contenttypes.interfaces.unita_organizzativa import IUnitaOrganizzativa
+from plone.app.dexterity import textindexer
+from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from z3c.relationfield.schema import RelationChoice
@@ -63,6 +65,32 @@ class IUnitaOrganizzativaV2(model.Schema):
             ", per farlo aprire direttamente nel client di posta.",
         ),
     )
+
+    # custom fieldsets and order
+    model.fieldset(
+        "cosa_fa",
+        label=_("cosa_fa_label", default="Cosa fa"),
+        fields=["competenze"],
+    )
+    model.fieldset(
+        "struttura",
+        fields=[
+            "tipologia_organizzazione",
+        ],
+    )
+
+    model.fieldset(
+        "contatti",
+        label=_("contatti_label", default="Contatti"),
+        fields=["sede", "contact_info"],
+    )
+
+    textindexer.searchable("competenze")
+    textindexer.searchable("tipologia_organizzazione")
+
+    form.order_after(tipologia_organizzazione="responsabile")
+    form.order_before(sede="sedi_secondarie")
+    # form.order_after(contact_info="sedi_secondarie")
 
 
 @implementer(IUnitaOrganizzativaV2)

@@ -5,6 +5,7 @@
         i18n:domain="design.plone.contenttypes"
 > 
   <property name="behaviors" purge="false">
+    <element value="design.plone.contenttypes.behavior.unita_organizzativa_v2" />
     <element value="design.plone.contenttypes.behavior.address_uo"/>
     <element value="design.plone.contenttypes.behavior.geolocation_uo"/>
     <element value="design.plone.contenttypes.behavior.contatti_uo_v2" />
