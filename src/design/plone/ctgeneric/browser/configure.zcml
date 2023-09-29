@@ -2,10 +2,14 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="design.plone.ctgeneric">
+    i18n_domain="design.plone.ctgeneric"
+    >
 
   <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
-  <include package="z3c.jbot" file="meta.zcml" />
+  <include
+      package="z3c.jbot"
+      file="meta.zcml"
+      />
   <browser:jbot
       directory="overrides"
       layer="design.plone.ctgeneric.interfaces.IDesignPloneCtgenericLayer"
@@ -13,12 +17,12 @@
 
   <!-- Publish static files -->
   <plone:static
+      directory="static"
       name="design.plone.ctgeneric"
       type="plone"
-      directory="static"
       />
 
-    <browser:page
+  <browser:page
       name="design-plone-v2-settings"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       class=".controlpanel.DesignPloneV2ControlPanelView"
