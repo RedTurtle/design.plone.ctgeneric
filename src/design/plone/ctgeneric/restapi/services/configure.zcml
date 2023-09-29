@@ -5,5 +5,10 @@
     >
 
   <include package=".types" />
+  <adapter
+      factory=".controlpanel.DesignPloneV2Settings"
+      provides="design.plone.ctgeneric.interfaces.IDesignPloneV2SettingsControlpanel"
+      name="design-plone-v2-settings"
+      />
 
 </configure>

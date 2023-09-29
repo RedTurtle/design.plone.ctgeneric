@@ -13,10 +13,13 @@
   -->
   <!--<includeDependencies package="." />-->
 
+
   <include package=".behaviors" />
+  <include package=".browser" />
   <include package=".restapi" />
+  <include package=".vocabularies" />
 
-
+  <include file="monkey.zcml" />
   <include file="permissions.zcml" />
 
   <genericsetup:registerProfile
@@ -42,6 +45,8 @@
       name="design.plone.ctgeneric-hiddenprofiles"
       />
 
-  <!-- -*- extra stuff goes here -*- -->
+  <!-- indexers -->
+  <adapter factory=".indexers.ruolo" name="ruolo" />
+
 
 </configure>

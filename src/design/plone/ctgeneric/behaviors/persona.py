@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 from design.plone.contenttypes import _
 from design.plone.contenttypes.interfaces.persona import IPersona
+from plone.autoform import directives as form
 from plone.app.dexterity import textindexer
+from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.namedfile import field
 from plone.supermodel import model
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.component import adapter
 from zope.interface import implementer
@@ -21,6 +25,23 @@ class IPersonaV2(model.Schema):
         ),
         vocabulary="design.plone.contenttypes.RuoliPersona",
         required=True,
+    )
+    organizzazione_riferimento = RelationList(
+        title=_(
+            "organizzazione_riferimento_label",
+            default="Organizzazione di riferimento",
+        ),
+        description=_(
+            "organizzazione_riferimento_help",
+            default="Seleziona una lista di organizzazioni a cui la persona"
+            " appartiene.",
+        ),
+        value_type=RelationChoice(
+            title=_("Organizzazione di riferimento"),
+            vocabulary="plone.app.vocabularies.Catalog",
+        ),
+        default=[],
+        required=False,
     )
 
     data_conclusione_incarico = schema.Date(
@@ -108,12 +129,24 @@ class IPersonaV2(model.Schema):
         ),
     )
 
+    # custom widgets
+    form.widget(
+        "organizzazione_riferimento",
+        RelatedItemsFieldWidget,
+        vocabulary="plone.app.vocabularies.Catalog",
+        pattern_options={
+            "maximumSelectionSize": 10,
+            "selectableTypes": ["UnitaOrganizzativa"],
+        },
+    )
+
     # custom fieldsets
     model.fieldset(
         "ruolo",
         label=_("ruolo_label", default="Ruolo"),
         fields=[
             "ruolo",
+            "organizzazione_riferimento",
             "data_conclusione_incarico",
             "tipologia_persona",
             "data_insediamento",
@@ -129,6 +162,13 @@ class IPersonaV2(model.Schema):
         label=_("documenti_label", default="Documenti"),
         fields=["curriculum_vitae", "atto_nomina"],
     )
+
+    form.order_before(ruolo="competenze")
+    form.order_after(organizzazione_riferimento="ruolo")
+    form.order_after(data_conclusione_incarico="organizzazione_riferimento")
+    form.order_after(tipologia_persona="deleghe")
+    form.order_before(data_insediamento="biografia")
+
     # SearchableText fields
     textindexer.searchable("ruolo")
     textindexer.searchable("tipologia_persona")

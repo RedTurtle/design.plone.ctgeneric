@@ -4,8 +4,11 @@ from design.plone.ctgeneric.testing import (
 )
 from design.plone.contenttypes.tests.test_ct_luogo import (
     TestLuogoSchema as BaseSchemaTest,
+    TestLuogoApi as BaseTestLuogoApi,
 )
 from plone import api
+from transaction import commit
+from uuid import uuid4
 
 
 class TestLuogoSchema(BaseSchemaTest):
@@ -100,3 +103,35 @@ class TestLuogoSchema(BaseSchemaTest):
             # ma nei test esce così perché non viene vista la patch di SchemaTweaks
             ["subjects", "language", "relatedItems"],
         )
+
+
+class TestLuogoApi(BaseTestLuogoApi):
+    layer = DESIGN_PLONE_CTGENERIC_API_FUNCTIONAL_TESTING
+
+    def test_venue_geolocation_deserializer_right_structure(self):
+        venue = api.content.create(
+            container=self.portal, type="Venue", title="Example venue"
+        )
+
+        commit()
+        self.assertEqual(venue.geolocation, None)
+
+        text_uuid = str(uuid4())
+        response = self.api_session.patch(
+            venue.absolute_url(),
+            json={
+                "@type": "Venue",
+                "title": "Foo",
+                "geolocation": {"latitude": 11.0, "longitude": 10.0},
+                "modalita_accesso": {
+                    "blocks": {
+                        text_uuid: {
+                            "@type": "text",
+                            "text": {"blocks": [{"text": "Test", "type": "paragraph"}]},
+                        }
+                    },
+                    "blocks_layout": {"items": [text_uuid]},
+                },
+            },
+        )
+        self.assertEqual(response.status_code, 204)

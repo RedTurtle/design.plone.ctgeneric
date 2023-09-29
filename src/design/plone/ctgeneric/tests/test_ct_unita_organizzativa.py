@@ -4,8 +4,10 @@ from design.plone.ctgeneric.testing import (
 )
 from design.plone.contenttypes.tests.test_ct_unita_organizzativa import (
     TestUOSchema as BaseSchemaTest,
+    TestUO as BaseTest,
 )
 from plone import api
+from transaction import commit
 
 
 class TestUOSchema(BaseSchemaTest):
@@ -102,3 +104,25 @@ class TestUOSchema(BaseSchemaTest):
             # ma nei test esce così perché non viene vista la patch di SchemaTweaks
             ["subjects", "language", "relatedItems"],
         )
+
+
+class TestUO(BaseTest):
+    """"""
+
+    layer = DESIGN_PLONE_CTGENERIC_API_FUNCTIONAL_TESTING
+
+    def test_cant_patch_uo_that_has_no_required_fields(self):
+        """
+        in V3 you get a 400, but here you can
+        """
+        uo = api.content.create(
+            container=self.portal, type="UnitaOrganizzativa", title="Foo"
+        )
+        commit()
+        resp = self.api_session.patch(
+            uo.absolute_url(),
+            json={
+                "title": "Foo modified",
+            },
+        )
+        self.assertEqual(resp.status_code, 204)

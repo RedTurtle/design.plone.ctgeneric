@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:monkey="http://namespaces.plone.org/monkey">
+
+    <include package="collective.monkeypatcher" />
+
+    <monkey:patch
+        description=""
+        class="design.plone.contenttypes.restapi.serializers.dxcontent.MetaTypeSerializer"
+        original="get_design_meta_type"
+        replacement=".monkey.get_design_meta_type"
+        />
+</configure>

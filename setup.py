@@ -53,6 +53,7 @@ setup(
     install_requires=[
         "setuptools",
         "design.plone.contenttypes",
+        "collective.monkeypatcher",
     ],
     extras_require={
         "test": [

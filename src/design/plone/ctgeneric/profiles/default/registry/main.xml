@@ -3,6 +3,7 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="design.plone.ctgeneric">
 
-<!-- -*- extra stuff goes here -*- -->
+    <records interface="design.plone.ctgeneric.interfaces.IDesignPloneV2Settings" />
+
 
 </registry>

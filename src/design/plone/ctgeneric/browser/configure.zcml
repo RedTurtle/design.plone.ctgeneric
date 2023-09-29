@@ -18,4 +18,11 @@
       directory="static"
       />
 
+    <browser:page
+      name="design-plone-v2-settings"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.DesignPloneV2ControlPanelView"
+      permission="cmf.ManagePortal"
+      layer="design.plone.ctgeneric.interfaces.IDesignPloneCtgenericLayer"
+      />
 </configure>
