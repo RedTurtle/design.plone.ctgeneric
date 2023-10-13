@@ -1,4 +1,4 @@
-from design.plone.contenttypes import _
+from design.plone.ctgeneric import _
 from plone import api
 from zope.i18n import translate
 

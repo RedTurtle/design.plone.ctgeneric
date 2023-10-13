@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
-from collective.volto.blocksfield.field import BlocksField
-from design.plone.contenttypes import _
-from design.plone.contenttypes.behaviors.evento import IEvento
+from design.plone.ctgeneric import _
+from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent
 from plone.supermodel import model
-from z3c.relationfield.schema import RelationChoice
-from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.component import adapter
 from zope.interface import implementer
@@ -14,43 +11,10 @@ from zope.interface import provider
 
 
 @provider(IFormFieldProvider)
-class IEventoV2(IEvento):
+class IEventoV2(model.Schema):
     """
     Campi custom solo per la v2
     """
-
-    descrizione_estesa = BlocksField(
-        title=_("descrizione_estesa", default="Descrizione estesa"),
-        required=False,
-        description=_(
-            "descrizione_estesa_help",
-            default="Descrizione dettagliata e completa.",
-        ),
-    )
-
-    descrizione_destinatari = BlocksField(
-        title=_("a_chi_si_rivolge_label", default="A chi è rivolto"),
-        required=False,
-        description=_(
-            "a_chi_si_rivolge_help",
-            default="Descrizione testuale dei principali destinatari dell'Evento",
-        ),
-    )
-
-    persone_amministrazione = RelationList(
-        title="Persone dell'amministrazione che partecipano all'evento",
-        default=[],
-        value_type=RelationChoice(
-            title=_("Persona dell'amministrazione"),
-            vocabulary="plone.app.vocabularies.Catalog",
-        ),
-        description=_(
-            "persone_amministrazione_help",
-            default="Elenco delle persone dell'amministrazione che"
-            " parteciperanno all'evento.",
-        ),
-        required=False,
-    )
 
     telefono = schema.TextLine(
         title=_("telefono_event_help", default="Telefono"),
@@ -106,11 +70,12 @@ class IEventoV2(IEvento):
             "web",
         ],
     )
-    model.fieldset(
-        "informazioni",
-        label=_("informazioni_label", default="Ulteriori informazioni"),
-        fields=["patrocinato_da"],
-    )
+
+    form.order_after(telefono="organizzato_da_esterno")
+    form.order_after(fax="telefono")
+    form.order_after(reperibilita="fax")
+    form.order_after(email="reperibilita")
+    form.order_after(web="email")
 
 
 @implementer(IEventoV2)

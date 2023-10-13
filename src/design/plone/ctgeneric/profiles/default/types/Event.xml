@@ -5,12 +5,11 @@
         i18n:domain="plone"
 >
   <property name="behaviors" purge="False">
-    <element value="design.plone.contenttypes.behavior.argomenti"/>
     <element value="design.plone.contenttypes.behavior.evento_v2" />
     
     <!-- rimuove behavior della V3 -->
-    <element remove="True" value="design.plone.contenttypes.behavior.evento" />
-    <element remove="True" value="design.plone.contenttypes.behavior.argomenti_evento"/>
+    <!-- <element remove="True" value="design.plone.contenttypes.behavior.evento" />
+    <element remove="True" value="design.plone.contenttypes.behavior.argomenti_evento"/> -->
     <element remove="True" value="design.plone.contenttypes.behavior.contatti_event" />
     <element remove="True" value="collective.taxonomy.generated.tipologia_evento" />
   </property>

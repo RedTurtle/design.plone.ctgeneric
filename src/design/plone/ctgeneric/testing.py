@@ -9,6 +9,7 @@ from design.plone.contenttypes.testing import DesignPloneContenttypesLayer
 from design.plone.contenttypes.testing import DesignPloneContenttypesRestApiLayer
 
 import design.plone.ctgeneric
+import plone.supermodel
 
 
 class DesignPloneCtgenericLayer(DesignPloneContenttypesLayer):
@@ -18,6 +19,7 @@ class DesignPloneCtgenericLayer(DesignPloneContenttypesLayer):
         # layer.
         super().setUpZope(app, configurationContext)
         self.loadZCML(package=design.plone.ctgeneric)
+        self.loadZCML(package=plone.supermodel)
 
     def setUpPloneSite(self, portal):
         super().setUpPloneSite(portal)
@@ -31,6 +33,7 @@ class DesignPloneCtgenericRestApiLayer(DesignPloneContenttypesRestApiLayer):
         # layer.
         super().setUpZope(app, configurationContext)
         self.loadZCML(package=design.plone.ctgeneric)
+        self.loadZCML(package=plone.supermodel)
 
     def setUpPloneSite(self, portal):
         super().setUpPloneSite(portal)

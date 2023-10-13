@@ -9,7 +9,6 @@
 
     <!-- remove from v3 -->
     <element remove="True" value="design.plone.contenttypes.behavior.contatti_persona" />
-    <element remove="true" value="design.plone.contenttypes.behavior.persona_additional_fields" />
   </property>
 
 </object>

@@ -7,11 +7,8 @@
  
   <property name="behaviors" purge="false">
     <element value="design.plone.contenttypes.behavior.documento_v2" />
-    <element value="design.plone.contenttypes.behavior.argomenti_documento_v2" />
 
     <!-- remove v3 behaviors -->
-    <element value="design.plone.contenttypes.behavior.documento_additional_fields" remove="true" />
-    <element value="design.plone.contenttypes.behavior.argomenti_documento" remove="true" />
     <element value="collective.taxonomy.generated.person_life_events" remove="true" />
     <element value="collective.taxonomy.generated.business_events" remove="true" />
     <element value="collective.taxonomy.generated.tipologia_documenti_albopretorio" remove="true" />

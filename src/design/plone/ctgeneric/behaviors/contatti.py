@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from collective.venue.interfaces import IVenue
 from collective.volto.blocksfield.field import BlocksField
-from design.plone.contenttypes import _
+from design.plone.ctgeneric import _
 from design.plone.contenttypes.interfaces.unita_organizzativa import IUnitaOrganizzativa
 from plone.app.dexterity import textindexer
 from plone.autoform.interfaces import IFormFieldProvider

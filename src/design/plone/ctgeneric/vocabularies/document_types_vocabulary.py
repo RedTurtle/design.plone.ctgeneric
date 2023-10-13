@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # from plone import api
-from design.plone.contenttypes import _
+from design.plone.ctgeneric import _
 from plone.dexterity.interfaces import IDexterityContent
 from zope.globalrequest import getRequest
 from zope.interface import implementer

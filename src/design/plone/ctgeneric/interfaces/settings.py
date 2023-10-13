@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from design.plone.contenttypes import _
+from design.plone.ctgeneric import _
 from plone.restapi.controlpanels.interfaces import IControlpanel
 from zope.interface import Interface
 from zope.schema import SourceText

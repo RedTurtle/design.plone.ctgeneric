@@ -5,11 +5,9 @@
         i18n:domain="design.plone.contenttypes"
 >
   <property name="behaviors" purge="false">
-    <element value="design.plone.contenttypes.behavior.argomenti"/>
     <element value="design.plone.contenttypes.behavior.servizio_v2"/>
+    
     <!-- remove from v3 -->
-    <element remove="True" value="design.plone.contenttypes.behavior.servizio_additional_fields" />
-    <element remove="True" value="design.plone.contenttypes.behavior.argomenti_servizio" />
     <element remove="True" value="design.plone.contenttypes.behavior.contatti_servizio" />
     <element remove="True" value="collective.taxonomy.generated.person_life_events" />
     <element remove="True" value="collective.taxonomy.generated.business_events" />

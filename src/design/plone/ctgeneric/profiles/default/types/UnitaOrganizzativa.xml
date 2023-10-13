@@ -7,12 +7,9 @@
   <property name="behaviors" purge="false">
     <element value="design.plone.contenttypes.behavior.unita_organizzativa_v2" />
     <element value="design.plone.contenttypes.behavior.address_uo"/>
-    <element value="design.plone.contenttypes.behavior.geolocation_uo"/>
     <element value="design.plone.contenttypes.behavior.contatti_uo_v2" />
 
     <!-- remove from v3 -->
-    <element remove="true" value="design.plone.contenttypes.behavior.unita_organizzativa_additional_fields" />
-    <element remove="true" value="collective.taxonomy.generated.tipologia_organizzazione" />
     <element remove="true" value="design.plone.contenttypes.behavior.contatti_uo" />
 
   </property>
