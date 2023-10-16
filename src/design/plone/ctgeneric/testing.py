@@ -33,7 +33,6 @@ class DesignPloneCtgenericRestApiLayer(DesignPloneContenttypesRestApiLayer):
         # layer.
         super().setUpZope(app, configurationContext)
         self.loadZCML(package=design.plone.ctgeneric)
-        self.loadZCML(package=plone.supermodel)
 
     def setUpPloneSite(self, portal):
         super().setUpPloneSite(portal)

@@ -5,6 +5,9 @@
 
   <!-- summary -->
   <adapter factory=".summary.DefaultJSONSummarySerializer" />
+  <adapter factory=".summary.PersonaDefaultJSONSummarySerializer" />
   <adapter factory=".unita_organizzativa.UOJSONSummarySerializer" />
+  <adapter factory=".persona.PersonaSerializer" />
+
 
 </configure>

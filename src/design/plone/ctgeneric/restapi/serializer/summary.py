@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from design.plone.ctgeneric.interfaces import IDesignPloneCtgenericLayer
 from plone.restapi.interfaces import ISerializeToJsonSummary
+from design.plone.contenttypes.interfaces.persona import IPersona
 from design.plone.contenttypes.restapi.serializers.summary import (
     DefaultJSONSummarySerializer as BaseSerializer,
+    PersonaDefaultJSONSummarySerializer as BasePersonaSerializer,
 )
 from zope.component import adapter
 from zope.interface import implementer
@@ -15,5 +17,16 @@ class DefaultJSONSummarySerializer(BaseSerializer):
     def __call__(self, force_all_metadata=False):
         res = super().__call__(force_all_metadata=force_all_metadata)
         if self.context.portal_type == "Persona":
-            res["ruolo"] = self.context.ruolo
+            res["ruolo"] = getattr(self.context, "ruolo", "")
+            res["incarichi"] = getattr(self.context, "ruolo", "")
+        return res
+
+
+@implementer(ISerializeToJsonSummary)
+@adapter(IPersona, IDesignPloneCtgenericLayer)
+class PersonaDefaultJSONSummarySerializer(BasePersonaSerializer):
+    def __call__(self, force_all_metadata=False):
+        res = super().__call__(force_all_metadata=force_all_metadata)
+        res["ruolo"] = getattr(self.context, "ruolo", "")
+        res["incarichi"] = getattr(self.context, "ruolo", "")
         return res
