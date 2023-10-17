@@ -17,7 +17,7 @@ class PersonaSerializer(BaseSerializer):
 
         result["incarichi_persona"] = self.get_incarichi_v2()
         # temporary disabled
-        # result["contact_info"] = self.get_contacts_v2()
+        result["contact_info"] = self.get_contacts_v2()
         return result
 
     def get_incarichi_v2(self):

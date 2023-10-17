@@ -8,7 +8,6 @@
   <adapter factory=".summary.PersonaDefaultJSONSummarySerializer" />
   <adapter factory=".unita_organizzativa.UOJSONSummarySerializer" />
   <adapter factory=".persona.PersonaSerializer" />
-  <adapter factory=".venue.VenueSerializer" />
 
 
 

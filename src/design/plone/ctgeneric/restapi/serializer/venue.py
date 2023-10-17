@@ -6,7 +6,6 @@ from plone.restapi.interfaces import ISerializeToJson
 from zope.component import adapter
 from zope.interface import implementer
 from design.plone.ctgeneric.interfaces import IDesignPloneCtgenericLayer
-from plone.restapi.serializer.converters import json_compatible
 
 
 @implementer(ISerializeToJson)
