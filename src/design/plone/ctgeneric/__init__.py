@@ -8,9 +8,6 @@ from zope.i18nmessageid import MessageFactory
 
 _ = MessageFactory("design.plone.ctgeneric")
 
-evento.GALLERIA_MAPPING = {"id": "multimedia", "title": "Multimedia"}
-evento.DOCUMENTI_TITLE = "Documenti"
-
 
 persona_folders = [x for x in persona.FOLDERS if x["contains"] != ("Incarico",)]
 persona_folders.extend(

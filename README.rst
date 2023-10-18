@@ -36,29 +36,11 @@ Add-on that implements AGID v2 content types rules
 Features
 --------
 
-- Can be bullet points
+TODO
+----
 
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
-
+[] Nel v3 delle cartelle degli eventi si chiamano in modo diverso, quindi vanno rinominate (credo ci sia già un upgrade-step del v3 che lo fa).
+   multimedia diventa immagini
 
 Installation
 ------------
