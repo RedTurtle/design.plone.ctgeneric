@@ -39,5 +39,5 @@
   <records interface="plone.app.querystring.interfaces.IQueryField" prefix="plone.app.querystring.field.tipologia_organizzazione" remove="True" />
   <records interface="plone.app.querystring.interfaces.IQueryField" prefix="plone.app.querystring.field.tipologia_pdc" remove="True" />
   <records interface="plone.app.querystring.interfaces.IQueryField" prefix="plone.app.querystring.field.tipologia_stati_pratica" remove="True" />
-  <records interface="plone.app.querystring.interfaces.IQueryField" prefix="plone.app.querystring.field.data_conclusione_incarico" remove="True" >
+  <records interface="plone.app.querystring.interfaces.IQueryField" prefix="plone.app.querystring.field.data_conclusione_incarico" remove="True" />
 </registry>
