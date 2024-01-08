@@ -14,8 +14,8 @@ from zope.interface import Interface
 @implementer(ISerializeToJsonSummary)
 @adapter(Interface, IDesignPloneCtgenericLayer)
 class DefaultJSONSummarySerializer(BaseSerializer):
-    def __call__(self, force_all_metadata=False):
-        res = super().__call__(force_all_metadata=force_all_metadata)
+    def __call__(self, **kwargs):
+        res = super().__call__(**kwargs)
         if self.context.portal_type == "Persona":
             res["ruolo"] = getattr(self.context, "ruolo", "")
             res["incarichi"] = getattr(self.context, "ruolo", "")
@@ -25,8 +25,8 @@ class DefaultJSONSummarySerializer(BaseSerializer):
 @implementer(ISerializeToJsonSummary)
 @adapter(IPersona, IDesignPloneCtgenericLayer)
 class PersonaDefaultJSONSummarySerializer(BasePersonaSerializer):
-    def __call__(self, force_all_metadata=False):
-        res = super().__call__(force_all_metadata=force_all_metadata)
+    def __call__(self, **kwargs):
+        res = super().__call__(**kwargs)
         res["ruolo"] = getattr(self.context, "ruolo", "")
         res["incarichi"] = getattr(self.context, "ruolo", "")
         return res
