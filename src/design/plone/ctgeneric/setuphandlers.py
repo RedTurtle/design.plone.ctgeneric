@@ -40,6 +40,7 @@ def disable_searchable_types():
         "Messaggio",
         "Pratica",
         "RicevutaPagamento",
+        "Incarico",
     ]
     types = [x for x in settings.types_not_searched if x not in remove_types]
     settings.types_not_searched = tuple(types)
