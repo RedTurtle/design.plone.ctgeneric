@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Init and utils."""
-from design.plone.contenttypes.events import evento
-from design.plone.contenttypes.events import persona
+from design.plone.contenttypes.events import common
 from design.plone.contenttypes.vocabularies import tags_vocabulary
 
 from zope.i18nmessageid import MessageFactory
@@ -9,7 +8,11 @@ from zope.i18nmessageid import MessageFactory
 _ = MessageFactory("design.plone.ctgeneric")
 
 
-persona_folders = [x for x in persona.FOLDERS if x["contains"] != ("Incarico",)]
+subfolders_mapping = common.SUBFOLDERS_MAPPING
+
+persona_folders = [
+    x for x in subfolders_mapping["Persona"] if x["allowed_types"] != ("Incarico",)
+]
 persona_folders.extend(
     [
         {"id": "compensi", "title": "Compensi", "contains": ("File",)},
@@ -20,8 +23,9 @@ persona_folders.extend(
         },
     ]
 )
+subfolders_mapping["Persona"] = persona_folders
 
-persona.FOLDERS = persona_folders
+common.SUBFOLDERS_MAPPING = subfolders_mapping
 
 
 tags_vocabulary.TAGS_MAPPING = [
