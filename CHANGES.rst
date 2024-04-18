@@ -5,8 +5,8 @@ Changelog
 1.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Fix wrong release.
+  [cekk]
 
 1.0.1 (2024-04-18)
 ------------------

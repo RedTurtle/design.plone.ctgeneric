@@ -1,4 +1,4 @@
-graft src/design.plone
+graft src/
 graft docs
 include *.rst
 exclude tox.ini
