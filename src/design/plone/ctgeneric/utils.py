@@ -1,9 +1,10 @@
-from plone import api
 from design.plone.ctgeneric.interfaces import IDesignPloneV2Settings
+from plone import api
 
-import logging
 import json
+import logging
 import six
+
 
 logger = logging.getLogger(__name__)
 

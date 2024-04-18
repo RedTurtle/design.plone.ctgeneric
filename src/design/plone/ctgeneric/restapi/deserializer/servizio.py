@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from design.plone.ctgeneric.interfaces import IDesignPloneCtgenericLayer
 from design.plone.contenttypes.interfaces.servizio import IServizio
+from design.plone.ctgeneric.interfaces import IDesignPloneCtgenericLayer
 from plone.restapi.deserializer.dxcontent import DeserializeFromJson
 from plone.restapi.interfaces import IDeserializeFromJson
 from zope.component import adapter

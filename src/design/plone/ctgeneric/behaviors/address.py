@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from collective.address.behaviors import IAddress
-from design.plone.ctgeneric import _
 from design.plone.contenttypes.behaviors.address import IAddressLocal
 from design.plone.contenttypes.behaviors.address import IAddressNomeSede
 from design.plone.contenttypes.interfaces.unita_organizzativa import IUnitaOrganizzativa
+from design.plone.ctgeneric import _
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope.component import adapter

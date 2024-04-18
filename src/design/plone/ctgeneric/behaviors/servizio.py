@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from collective.volto.blocksfield.field import BlocksField
-from design.plone.ctgeneric import _
 from design.plone.contenttypes.interfaces.servizio import IServizio
+from design.plone.ctgeneric import _
 from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model

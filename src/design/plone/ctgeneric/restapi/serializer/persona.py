@@ -1,12 +1,12 @@
+from design.plone.contenttypes.interfaces.persona import IPersona
 from design.plone.contenttypes.restapi.serializers.persona import (
     PersonaSerializer as BaseSerializer,
 )
-from design.plone.contenttypes.interfaces.persona import IPersona
+from design.plone.ctgeneric.interfaces import IDesignPloneCtgenericLayer
 from plone.restapi.interfaces import ISerializeToJson
+from plone.restapi.serializer.converters import json_compatible
 from zope.component import adapter
 from zope.interface import implementer
-from design.plone.ctgeneric.interfaces import IDesignPloneCtgenericLayer
-from plone.restapi.serializer.converters import json_compatible
 
 
 @implementer(ISerializeToJson)

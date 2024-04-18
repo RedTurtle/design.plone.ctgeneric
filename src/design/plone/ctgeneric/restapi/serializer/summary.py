@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
-from design.plone.ctgeneric.interfaces import IDesignPloneCtgenericLayer
-from plone.restapi.interfaces import ISerializeToJsonSummary
 from design.plone.contenttypes.interfaces.persona import IPersona
 from design.plone.contenttypes.restapi.serializers.summary import (
     DefaultJSONSummarySerializer as BaseSerializer,
+)
+from design.plone.contenttypes.restapi.serializers.summary import (
     PersonaDefaultJSONSummarySerializer as BasePersonaSerializer,
 )
+from design.plone.ctgeneric.interfaces import IDesignPloneCtgenericLayer
+from plone.restapi.interfaces import ISerializeToJsonSummary
 from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import Interface

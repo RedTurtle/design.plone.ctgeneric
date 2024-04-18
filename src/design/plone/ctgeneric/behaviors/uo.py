@@ -8,7 +8,8 @@ from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope import schema
 from zope.component import adapter
-from zope.interface import provider, implementer
+from zope.interface import implementer
+from zope.interface import provider
 
 
 @provider(IFormFieldProvider)

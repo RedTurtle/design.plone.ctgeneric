@@ -2,8 +2,8 @@
 """Init and utils."""
 from design.plone.contenttypes.events import common
 from design.plone.contenttypes.vocabularies import tags_vocabulary
-
 from zope.i18nmessageid import MessageFactory
+
 
 _ = MessageFactory("design.plone.ctgeneric")
 

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-from design.plone.ctgeneric.testing import (
-    DESIGN_PLONE_CTGENERIC_API_FUNCTIONAL_TESTING,
+from design.plone.contenttypes.tests.test_ct_luogo import (
+    TestLuogoApi as BaseTestLuogoApi,
 )
 from design.plone.contenttypes.tests.test_ct_luogo import (
     TestLuogoSchema as BaseSchemaTest,
-    TestLuogoApi as BaseTestLuogoApi,
 )
+from design.plone.ctgeneric.testing import DESIGN_PLONE_CTGENERIC_API_FUNCTIONAL_TESTING
 from plone import api
 from transaction import commit
 from uuid import uuid4

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from design.plone.ctgeneric import _
 from design.plone.contenttypes.interfaces.persona import IPersona
-from plone.autoform import directives as form
+from design.plone.ctgeneric import _
 from plone.app.dexterity import textindexer
+from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.namedfile import field
 from plone.supermodel import model

@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 from collective.venue.interfaces import IVenue
 from collective.volto.blocksfield.field import BlocksField
-from design.plone.ctgeneric import _
 from design.plone.contenttypes.interfaces.unita_organizzativa import IUnitaOrganizzativa
+from design.plone.ctgeneric import _
 from plone.app.dexterity import textindexer
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope import schema
 from zope.component import adapter
-from zope.interface import provider, implementer
+from zope.interface import implementer
+from zope.interface import provider
 
 
 class IContattiV2(model.Schema):

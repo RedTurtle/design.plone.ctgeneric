@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
-from plone.app.testing import (
-    applyProfile,
-    FunctionalTesting,
-    IntegrationTesting,
-)
-from plone.testing import z2
 from design.plone.contenttypes.testing import DesignPloneContenttypesLayer
 from design.plone.contenttypes.testing import DesignPloneContenttypesRestApiLayer
+from plone.app.testing import applyProfile
+from plone.app.testing import FunctionalTesting
+from plone.app.testing import IntegrationTesting
+from plone.testing import z2
 
 import design.plone.ctgeneric
 import plone.supermodel

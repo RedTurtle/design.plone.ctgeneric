@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 from design.plone.ctgeneric import _
+from plone.app.contenttypes.interfaces import INewsItem
 from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
-from plone.app.contenttypes.interfaces import INewsItem
 from plone.supermodel import model
 from zope import schema
 from zope.component import adapter
-from zope.interface import provider, implementer
+from zope.interface import implementer
+from zope.interface import provider
 
 
 @provider(IFormFieldProvider)
