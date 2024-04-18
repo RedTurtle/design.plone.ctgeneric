@@ -16,7 +16,7 @@ long_description = "\n\n".join(
 
 setup(
     name="design.plone.ctgeneric",
-    version="1.0a1",
+    version="1.0.0",
     description="Add-on that implements AGID v2 content types rules",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
