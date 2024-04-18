@@ -5,9 +5,10 @@ from zope.i18n import translate
 
 def get_design_meta_type(self):
     ttool = api.portal.get_tool("portal_types")
-    if self.context.portal_type == "News Item" and self.context.tipologia_notizia:
+    tipologia_notizia = getattr(self.context, "tipologia_notizia", "")
+    if self.context.portal_type == "News Item" and tipologia_notizia:
         return translate(
-            self.context.tipologia_notizia,
+            tipologia_notizia,
             domain=_._domain,
             context=self.request,
         )
