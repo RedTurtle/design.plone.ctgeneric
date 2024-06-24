@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.3 (unreleased)
+1.0.3 (2024-06-24)
 ------------------
 
 - Fix breaking change in SUBFOLDERS_MAPPING in design.plone.contenttypes == 6.2.11.
