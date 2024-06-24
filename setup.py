@@ -53,7 +53,7 @@ setup(
     python_requires=">=3.7",
     install_requires=[
         "setuptools",
-        "design.plone.contenttypes",
+        "design.plone.contenttypes>=6.2.11",
         "collective.monkeypatcher",
     ],
     extras_require={

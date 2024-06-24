@@ -5,7 +5,8 @@ Changelog
 1.0.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix breaking change in SUBFOLDERS_MAPPING in design.plone.contenttypes == 6.2.11.
+  [cekk]
 
 
 1.0.2 (2024-04-18)

@@ -9,9 +9,10 @@ _ = MessageFactory("design.plone.ctgeneric")
 
 
 subfolders_mapping = common.SUBFOLDERS_MAPPING
-
 persona_folders = [
-    x for x in subfolders_mapping["Persona"] if x["allowed_types"] != ("Incarico",)
+    x
+    for x in subfolders_mapping["Persona"].get("content", [])
+    if x["allowed_types"] != ("Incarico",)
 ]
 persona_folders.extend(
     [
