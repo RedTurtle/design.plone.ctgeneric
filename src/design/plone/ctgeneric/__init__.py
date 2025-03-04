@@ -24,7 +24,8 @@ persona_folders.extend(
         },
     ]
 )
-subfolders_mapping["Persona"] = persona_folders
+
+subfolders_mapping["Persona"] = {'allowed_types': [], 'content': persona_folders}
 
 common.SUBFOLDERS_MAPPING = subfolders_mapping
 
