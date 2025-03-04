@@ -5,7 +5,8 @@ Changelog
 1.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix mapping for Persona.
+  [daniele]
 
 
 1.0.3 (2024-06-24)
