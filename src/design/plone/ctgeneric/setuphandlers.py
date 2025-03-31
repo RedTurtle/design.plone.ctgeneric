@@ -4,6 +4,10 @@ from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFPlone.interfaces import ISearchSchema
 from zope.component import getUtility
 from zope.interface import implementer
+from plone import api
+from collective.taxonomy.interfaces import ITaxonomy
+from zope.i18n.interfaces import ITranslationDomain
+from zope.schema.interfaces import IVocabularyFactory
 
 
 @implementer(INonInstallable)
@@ -23,6 +27,7 @@ def post_install(context):
     """Post install script"""
     # Do something at the end of the installation of this package.
     disable_searchable_types()
+    delete_tipologia_notizia_taxonomy()
 
 
 def uninstall(context):
@@ -44,3 +49,16 @@ def disable_searchable_types():
     ]
     types = [x for x in settings.types_not_searched if x not in remove_types]
     settings.types_not_searched = tuple(types)
+
+
+def delete_tipologia_notizia_taxonomy():
+    portal = api.portal.get()
+    sm = portal.getSiteManager()
+    name = "collective.taxonomy.tipologia_notizia"
+    utility = sm.queryUtility(ITaxonomy, name=name)
+    if utility is None:
+        return
+    utility.unregisterBehavior()
+    sm.unregisterUtility(utility, ITaxonomy, name=name)
+    sm.unregisterUtility(utility, IVocabularyFactory, name=name)
+    sm.unregisterUtility(utility, ITranslationDomain, name=name)

@@ -7,7 +7,10 @@ Changelog
 
 - Fix mapping for Persona.
   [daniele]
-
+- Remove tipoligia_notizia taxonomy (from v3) and index v2 field.
+  [cekk]
+- Re-add tipologia_notizia criteria.
+  [cekk]
 
 1.0.3 (2024-06-24)
 ------------------

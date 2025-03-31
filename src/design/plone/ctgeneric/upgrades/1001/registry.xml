@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="plone">
+    <!-- redefine tipologia_notizia criteria to not use taxonomy -->
+    <records interface="plone.app.querystring.interfaces.IQueryField" prefix="plone.app.querystring.field.tipologia_notizia">
+        <value key="title" i18n:translate="">Tipologia notizia</value>
+        <value key="description" i18n:translate="">Tipologia della notizia</value>
+        <value key="enabled">True</value>
+        <value key="sortable">False</value>
+        <value key="operations">
+            <element>plone.app.querystring.operation.selection.any</element>
+            <element>plone.app.querystring.operation.selection.all</element>
+        </value>
+        <value key="vocabulary">design.plone.vocabularies.tipologie_notizia</value>
+        <value key="group" i18n:translate="">Metadata</value>
+    </records>
+
+</registry>
