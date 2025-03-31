@@ -49,6 +49,9 @@
       />
 
   <!-- indexers -->
-  <adapter factory=".indexers.ruolo" name="ruolo"/>
+  <adapter
+      factory=".indexers.ruolo"
+      name="ruolo"
+      />
 
 </configure>
