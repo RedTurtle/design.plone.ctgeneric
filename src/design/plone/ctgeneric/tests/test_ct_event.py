@@ -97,7 +97,7 @@ class TestEventSchema(BaseSchemaTest):
                 "recurrence",
                 "tassonomia_argomenti",
                 "sottotitolo",
-            ]
+            ],
             # should be like this, but in tests SchemaTweaks does not work
             # [
             #     "title",
@@ -148,7 +148,7 @@ class TestEventSchema(BaseSchemaTest):
         resp = self.api_session.get("@types/Event").json()
         self.assertEqual(
             resp["fieldsets"][7]["fields"],
-            ["correlato_in_evidenza"]
+            ["correlato_in_evidenza"],
             # should be like this but SchemaTweaks does not work in tests
             # ["correlato_in_evidenza", "relatedItems"],
         )
@@ -160,7 +160,7 @@ class TestEventSchema(BaseSchemaTest):
         resp = self.api_session.get("@types/Event").json()
         self.assertEqual(
             resp["fieldsets"][8]["fields"],
-            ["subjects", "language", "relatedItems"]
+            ["subjects", "language", "relatedItems"],
             # should be like this with SchemaTweaks
             # ["subjects", "language"],
         )

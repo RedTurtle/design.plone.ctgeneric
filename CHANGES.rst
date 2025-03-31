@@ -5,6 +5,8 @@ Changelog
 1.0.4 (unreleased)
 ------------------
 
+- Fix mapping for Persona.
+  [daniele]
 - Remove tipoligia_notizia taxonomy (from v3) and index v2 field.
   [cekk]
 - Re-add tipologia_notizia criteria.
