@@ -1,4 +1,9 @@
 <?xml version="1.0"?>
 <object name="portal_catalog">
+
+  <column value="tipologia_notizia"/><index name="tipologia_notizia" meta_type="FieldIndex">
+    <indexed_attr value="tipologia_notizia"/>
+  </index>
+  
   <column value="ruolo"/>
 </object>
