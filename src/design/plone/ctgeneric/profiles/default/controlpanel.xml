@@ -9,10 +9,9 @@
              category="Products"
              condition_expr=""
              icon_expr=""
-             title="Impostazioni Design Plone V2"
+             title="Design Plone V2"
              url_expr="string:${portal_url}/@@design-plone-v2-settings"
              visible="True"
-             i18n:attributes="title"
   >
     <permission>Manage portal</permission>
   </configlet>

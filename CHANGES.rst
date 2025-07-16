@@ -9,6 +9,8 @@ Changelog
   [daniele]
 - Remove not needed z3c.jbot dependency.
   [cekk]
+- Fix controlpanel label.
+  [cekk]
 
 1.0.3 (2024-06-24)
 ------------------
