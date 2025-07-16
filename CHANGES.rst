@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.5 (Unreleased)
+1.0.5 (2025-07-16)
 ------------------
 
 - Fix controlpanel label.
