@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.4 (unreleased)
+1.0.4 (2025-07-16)
 ------------------
 
 - Fix mapping for Persona.
