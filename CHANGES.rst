@@ -1,15 +1,19 @@
 Changelog
 =========
 
+1.0.5 (Unreleased)
+------------------
 
-1.0.4 (unreleased)
+- Fix controlpanel label.
+  [cekk]
+
+
+1.0.4 (2025-07-16)
 ------------------
 
 - Fix mapping for Persona.
   [daniele]
 - Remove not needed z3c.jbot dependency.
-  [cekk]
-- Fix controlpanel label.
   [cekk]
 
 1.0.3 (2024-06-24)
