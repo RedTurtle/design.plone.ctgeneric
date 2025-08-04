@@ -20,7 +20,7 @@
   <include package=".browser" />
   <include package=".restapi" />
   <include package=".upgrades" />
-  
+
   <include package=".vocabularies" />
 
   <include file="monkey.zcml" />

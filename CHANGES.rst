@@ -4,8 +4,8 @@ Changelog
 1.0.6 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Documento CT: removed field ufficio_responsabile already defined in design.plone.contenttypes.
+  [daniele]
 
 1.0.5 (2025-07-16)
 ------------------
