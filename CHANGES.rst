@@ -4,7 +4,8 @@ Changelog
 1.0.7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fixed a bug in the Persona serializer when there are no contact points.
+  [fedevancin s]
 
 
 1.0.6 (2025-08-05)
