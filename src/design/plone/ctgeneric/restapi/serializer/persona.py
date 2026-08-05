@@ -51,6 +51,9 @@ class PersonaSerializer(BaseSerializer):
             if value:
                 pdc.append({"pdc_type": field, "pdc_value": value})
 
+        if not pdc:
+            return []
+
         return [
             [
                 {
