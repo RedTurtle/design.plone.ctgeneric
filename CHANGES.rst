@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.7 (unreleased)
+1.0.7 (2026-08-05)
 ------------------
 
 - Fixed a bug in the Persona serializer when there are no contact points.
