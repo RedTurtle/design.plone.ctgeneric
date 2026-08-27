@@ -4,3 +4,31 @@
 [meta]
 template = "default"
 commit-id = "2.11.1"
+
+[tox]
+# Support Plone 6.0, 6.1 and 6.2 (Python 3.11+) only.
+test_matrix = {"6.2" = ["3.14", "3.13", "3.12", "3.11"], "6.1" = ["3.13", "3.12", "3.11"], "6.0" = ["3.13", "3.12", "3.11"]}
+# dist.plone.org's 6.2-dev constraints pin Zope==6.2; experimental.noacquisition
+# (pulled in transitively via redturtle.volto) only supports that from 1.1.0b1.
+test_deps_additional = "experimental.noacquisition==1.1.0b1"
+
+[github]
+# Pin the reusable workflow ref to a commit SHA (plone/meta@2.x as of 2026-08-27)
+# to satisfy CodeQL's "unpinned tag for a non-immutable action" check.
+ref = "f3bf7140b6272dd21e793a92a4366c9c17ef6e10"
+
+[pyproject]
+dependencies_mappings = [
+    "setuptools = ['pkg_resources']",
+]
+# Neither package is imported directly by this package's own code, but both are
+# required at test-run time: redturtle.volto.testing hard-imports
+# plone.app.contenttypes.testing (-> plone.app.robotframework.testing) and
+# plone.restapi.testing (-> collective.MockMailHost).
+dependencies_ignores = "['plone.app.robotframework', 'collective.MockMailHost']"
+# "nome"/"possibile" are Italian words in user-facing labels, not typos.
+codespell_ignores = "nome,possibile"
+# .coveragerc is used by the coverage tox env but doesn't need to ship in the sdist.
+check_manifest_ignores = """
+    ".coveragerc",
+"""

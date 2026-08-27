@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
 """Installer for the design.plone.ctgeneric package."""
 
 from setuptools import find_packages
 from setuptools import setup
-
 
 long_description = "\n\n".join(
     [
@@ -16,7 +14,7 @@ long_description = "\n\n".join(
 
 setup(
     name="design.plone.ctgeneric",
-    version="1.0.8.dev0",
+    version="1.1.0.dev0",
     description="Add-on that implements AGID v2 content types rules",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
@@ -25,23 +23,25 @@ setup(
         "Development Status :: 5 - Production/Stable",
         "Framework :: Plone",
         "Framework :: Plone :: Addon",
-        "Framework :: Plone :: 5.2",
         "Framework :: Plone :: 6.0",
+        "Framework :: Plone :: 6.1",
+        "Framework :: Plone :: 6.2",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
     keywords="Python Plone CMS",
     author="RedTurtle Technology",
     author_email="sviluppo@redturtle.it",
-    url="https://github.com/collective/design.plone.ctgeneric",
+    url="https://github.com/RedTurtle/design.plone.ctgeneric",
     project_urls={
         "PyPI": "https://pypi.org/project/design.plone.ctgeneric/",
-        "Source": "https://github.com/collective/design.plone.ctgeneric",
-        "Tracker": "https://github.com/collective/design.plone.ctgeneric/issues",
+        "Source": "https://github.com/RedTurtle/design.plone.ctgeneric",
+        "Tracker": "https://github.com/RedTurtle/design.plone.ctgeneric/issues",
         # 'Documentation': 'https://design.plone.ctgeneric.readthedocs.io/en/latest/',
     },
     license="GPL version 2",
@@ -50,11 +50,36 @@ setup(
     package_dir={"": "src"},
     include_package_data=True,
     zip_safe=False,
-    python_requires=">=3.7",
+    python_requires=">=3.11",
     install_requires=[
         "setuptools",
         "design.plone.contenttypes>=6.2.11",
         "collective.monkeypatcher",
+        "collective.address",
+        "collective.geolocationbehavior",
+        "collective.venue",
+        "collective.volto.blocksfield",
+        "Products.CMFPlone",
+        "Products.GenericSetup",
+        "plone.api",
+        "plone.app.contenttypes",
+        "plone.app.dexterity",
+        "plone.app.registry",
+        "plone.autoform",
+        "plone.behavior",
+        "plone.dexterity",
+        "plone.indexer",
+        "plone.namedfile",
+        "plone.registry",
+        "plone.restapi",
+        "plone.supermodel",
+        "zope.component",
+        "zope.globalrequest",
+        "zope.i18n",
+        "zope.i18nmessageid",
+        "zope.interface",
+        "zope.publisher",
+        "zope.schema",
     ],
     extras_require={
         "test": [
@@ -63,9 +88,11 @@ setup(
             # Remove if your package shall be part of coredev.
             # plone_coredev tests as of 2016-04-01.
             "plone.testing>=5.0.0",
-            "plone.app.contenttypes",
             "plone.app.robotframework[debug]",
             "collective.MockMailHost",
+            "transaction",
+            "z3c.relationfield",
+            "zope.intid",
         ],
     },
     entry_points="""

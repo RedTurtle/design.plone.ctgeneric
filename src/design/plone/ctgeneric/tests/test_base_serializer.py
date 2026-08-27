@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
-
 """Setup tests for this package."""
+
 from design.plone.ctgeneric.testing import DESIGN_PLONE_CTGENERIC_API_FUNCTIONAL_TESTING
 from plone import api
 from plone.app.testing import setRoles
@@ -34,7 +33,7 @@ class TestBaseSerializer(unittest.TestCase):
     def test_design_italia_meta_type_news_with_tipologia(self):
         """
         News should return the news type (tipologia_notizia field)
-        Other types shoule return their own portal_type.
+        Other types should return their own portal_type.
         """
         news = api.content.create(
             container=self.portal,
@@ -52,7 +51,7 @@ class TestBaseSerializer(unittest.TestCase):
     def test_design_italia_meta_type_news_without_tipologia(self):
         """
         News should return the news type (tipologia_notizia field)
-        Other types shoule return their own portal_type.
+        Other types should return their own portal_type.
         """
         news = api.content.create(
             container=self.portal,
@@ -69,7 +68,7 @@ class TestBaseSerializer(unittest.TestCase):
     def test_design_italia_meta_type_with_type_different_from_news(self):
         """
         News should return the news type (tipologia_notizia field)
-        Other types shoule return their own portal_type.
+        Other types should return their own portal_type.
         """
         service = api.content.create(
             container=self.portal, type="Servizio", title="TestService"

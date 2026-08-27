@@ -26,7 +26,7 @@ profile = "plone"
 ##
 
 [tool.black]
-target-version = ["py39"]
+target-version = ["py311"]
 
 ##
 # Add extra configuration options in .meta.toml:
@@ -37,7 +37,7 @@ target-version = ["py39"]
 ##
 
 [tool.codespell]
-ignore-words-list = "discreet,assertin,thet,"
+ignore-words-list = "discreet,assertin,thet,nome,possibile"
 skip = "*.po,"
 ##
 # Add extra configuration options in .meta.toml:
@@ -86,6 +86,8 @@ Zope = [
 ]
 python-dateutil = ['dateutil']
 pytest-plone = ['pytest', 'zope.pytestlayer', 'plone.testing', 'plone.app.testing']
+ignore-packages = ['plone.app.robotframework', 'collective.MockMailHost']
+setuptools = ['pkg_resources']
 
 ##
 # Add extra configuration options in .meta.toml:
@@ -106,6 +108,7 @@ ignore = [
     "dependabot.yml",
     "mx.ini",
     "tox.ini",
+    ".coveragerc",
 
 ]
 

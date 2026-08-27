@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.contenttypes.testing import DesignPloneContenttypesLayer
 from design.plone.contenttypes.testing import DesignPloneContenttypesRestApiLayer
 from plone.app.testing import applyProfile

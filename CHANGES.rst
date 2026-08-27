@@ -1,10 +1,11 @@
 Changelog
 =========
 
-1.0.8 (unreleased)
+1.1.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Configured the package with plone.meta; CI now only tests Plone 6.0, 6.1 and 6.2 on Python 3.11+.
+  [mamico]
 
 
 1.0.7 (2026-08-05)
