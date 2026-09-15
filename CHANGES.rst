@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.8 (unreleased)
+1.0.8 (2026-09-15)
 ------------------
 
 - Removed a list-of-lists issue on the PersonaSerializer
