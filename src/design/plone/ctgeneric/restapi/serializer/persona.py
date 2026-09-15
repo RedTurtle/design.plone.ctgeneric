@@ -55,9 +55,7 @@ class PersonaSerializer(BaseSerializer):
             return []
 
         return [
-            [
-                {
-                    "value_punto_contatto": pdc,
-                }
-            ]
+            {
+                "value_punto_contatto": pdc,
+            }
         ]
