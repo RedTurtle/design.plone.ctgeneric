@@ -4,8 +4,6 @@
 [build-system]
 requires = ["setuptools>=68.2,<82", "wheel"]
 
-
-
 ##
 # Add extra configuration options in .meta.toml:
 #  [pyproject]
@@ -134,3 +132,4 @@ ignore = [
 #  _your own configuration lines_
 #  """
 ##
+

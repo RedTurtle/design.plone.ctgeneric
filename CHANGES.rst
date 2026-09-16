@@ -8,11 +8,18 @@ Changelog
   [mamico]
 
 
+1.0.8 (2026-09-15)
+------------------
+
+- Removed a list-of-lists issue on the PersonaSerializer
+  [fedevancin]
+
+
 1.0.7 (2026-08-05)
 ------------------
 
 - Fixed a bug in the Persona serializer when there are no contact points.
-  [fedevancin s]
+  [fedevancin]
 
 
 1.0.6 (2025-08-05)
