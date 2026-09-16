@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.contenttypes.tests.test_ct_servizio import (
     TestServizioSchema as BaseSchemaTest,
 )

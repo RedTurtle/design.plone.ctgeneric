@@ -3,8 +3,6 @@ from plone import api
 
 import json
 import logging
-import six
-
 
 logger = logging.getLogger(__name__)
 
@@ -15,7 +13,7 @@ def get_settings_for_language(field):
     )
     if not values:
         return []
-    if not isinstance(values, six.text_type):
+    if not isinstance(values, str):
         return values
     try:
         json_data = json.loads(values)

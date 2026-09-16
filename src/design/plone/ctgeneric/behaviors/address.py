@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.address.behaviors import IAddress
 from design.plone.contenttypes.behaviors.address import IAddressLocal
 from design.plone.contenttypes.behaviors.address import IAddressNomeSede
@@ -32,7 +31,7 @@ class IAddressUnitaOrganizzativa(IAddress, IAddressNomeSede, IAddressLocal):
 
 @implementer(IAddressUnitaOrganizzativa)
 @adapter(IUnitaOrganizzativa)
-class AddressUnitaOrganizzativa(object):
+class AddressUnitaOrganizzativa:
     """ """
 
     def __init__(self, context):

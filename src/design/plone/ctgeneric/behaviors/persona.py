@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.contenttypes.interfaces.persona import IPersona
 from design.plone.ctgeneric import _
 from plone.app.dexterity import textindexer
@@ -134,7 +133,7 @@ class IPersonaV2(model.Schema):
 
 @implementer(IPersonaV2)
 @adapter(IPersona)
-class PersonaV2(object):
+class PersonaV2:
     """"""
 
     def __init__(self, context):

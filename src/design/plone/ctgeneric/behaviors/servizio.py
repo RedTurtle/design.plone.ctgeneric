@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.volto.blocksfield.field import BlocksField
 from design.plone.contenttypes.interfaces.servizio import IServizio
 from design.plone.ctgeneric import _
@@ -29,7 +28,7 @@ class IServizioV2(model.Schema):
 
 @implementer(IServizioV2)
 @adapter(IServizio)
-class ServizioV2(object):
+class ServizioV2:
     """"""
 
     def __init__(self, context):
