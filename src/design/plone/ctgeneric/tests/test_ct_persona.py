@@ -1,6 +1,4 @@
-from design.plone.contenttypes.tests.test_ct_persona import (
-    TestPersonaSchema as BaseSchemaTest,
-)
+from design.plone.contenttypes.tests import test_ct_persona as base
 from design.plone.ctgeneric.testing import DESIGN_PLONE_CTGENERIC_API_FUNCTIONAL_TESTING
 from plone import api
 from plone.app.testing import setRoles
@@ -16,7 +14,7 @@ from zope.intid.interfaces import IIntIds
 import unittest
 
 
-class TestPersonaSchema(BaseSchemaTest):
+class TestPersonaSchema(base.TestPersonaSchema):
     layer = DESIGN_PLONE_CTGENERIC_API_FUNCTIONAL_TESTING
 
     def test_behaviors_enabled_for_persona(self):
@@ -39,8 +37,31 @@ class TestPersonaSchema(BaseSchemaTest):
                 "plone.translatable",
                 "kitconcept.seo",
                 "plone.versioning",
+                "plone.constraintypes",
                 "design.plone.contenttypes.behavior.persona_v2",
             ),
+        )
+
+    def test_persona_fieldsets(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Persona").json()
+        self.assertEqual(
+            [x.get("id") for x in resp["fieldsets"]],
+            [
+                "default",
+                "ruolo",
+                "contatti",
+                "documenti",
+                "informazioni",
+                "correlati",
+                "categorization",
+                "dates",
+                "ownership",
+                "settings",
+                "seo",
+            ],
         )
 
     def test_persona_required_fields(self):
@@ -82,8 +103,90 @@ class TestPersonaSchema(BaseSchemaTest):
         """
         resp = self.api_session.get("@types/Persona").json()
         self.assertEqual(
-            resp["fieldsets"][3]["fields"], ["curriculum_vitae", "atto_nomina"]
+            resp["fieldsets"][3]["fields"],
+            [
+                "curriculum_vitae",
+                "emolumenti_a_carico_della_finanza_pubblica",
+                "dichiarazioni_di_insussistenza_e_incompatibilita",
+                "atto_nomina",
+            ],
         )
+
+    def test_persona_fields_correlati_fieldset(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Persona").json()
+        self.assertEqual(resp["fieldsets"][5]["fields"], ["relatedItems"])
+
+    def test_persona_fields_categorization_fieldset(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Persona").json()
+        self.assertEqual(resp["fieldsets"][6]["fields"], ["subjects", "language"])
+
+    def test_persona_fields_dates_fieldset(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Persona").json()
+        self.assertEqual(resp["fieldsets"][7]["fields"], ["effective", "expires"])
+
+    def test_persona_fields_ownership_fieldset(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Persona").json()
+        self.assertEqual(
+            resp["fieldsets"][8]["fields"], ["creators", "contributors", "rights"]
+        )
+
+    def test_persona_fields_settings_fieldset(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Persona").json()
+        self.assertEqual(
+            resp["fieldsets"][9]["fields"],
+            [
+                "allow_discussion",
+                "exclude_from_nav",
+                "id",
+                "versioning_enabled",
+                "changeNote",
+            ],
+        )
+
+    def test_persona_fields_seo_fieldset(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Persona").json()
+        self.assertEqual(
+            resp["fieldsets"][-1]["fields"],
+            [
+                "seo_title",
+                "seo_description",
+                "seo_noindex",
+                "seo_canonical_url",
+                "opengraph_title",
+                "opengraph_description",
+                "opengraph_image",
+            ],
+        )
+
+    @unittest.skip("ctgeneric removes incarichi folder and incarichi_persona field")
+    def test_atto_di_nomina_incarico(self):
+        pass
+
+    @unittest.skip("ctgeneric removes incarichi folder and incarichi_persona field")
+    def test_delete_incarico_and_call_persona(self):
+        pass
+
+    @unittest.skip("ctgeneric removes incarichi folder and incarichi_persona field")
+    def test_unauthorized_on_subfolder(self):
+        pass
 
 
 class TestPersonaEndpoint(unittest.TestCase):
@@ -174,6 +277,9 @@ class TestPersonaEndpoint(unittest.TestCase):
                 "spese-elettorali",
                 "variazione-situazione-patrimoniale",
                 "altre-cariche",
+                "altri-documenti",
+                "dichiarazione-insussistenza-cause-di-inconferibilita-e-incompatibilita",  # noqa
+                "emolumenti-complessivi-percepiti-a-carico-della-finanza-pubblica",
                 "compensi",
                 "importi-di-viaggio-e-o-servizi",
             ],

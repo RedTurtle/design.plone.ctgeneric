@@ -1,11 +1,56 @@
-from design.plone.contenttypes.tests.test_ct_modulo import (
-    TestModuloSchema as BaseSchemaTest,
-)
+from design.plone.contenttypes.tests import test_ct_modulo as base
 from design.plone.ctgeneric.testing import DESIGN_PLONE_CTGENERIC_API_FUNCTIONAL_TESTING
 
 
-class TestModuloSchema(BaseSchemaTest):
+class TestModuloSchema(base.TestModuloSchema):
     layer = DESIGN_PLONE_CTGENERIC_API_FUNCTIONAL_TESTING
+
+    def test_modulo_fieldsets(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Modulo").json()
+        self.assertEqual(
+            [x.get("id") for x in resp["fieldsets"]],
+            [
+                "default",
+                "settings",
+                "correlati",
+                "categorization",
+                "dates",
+                "ownership",
+            ],
+        )
+
+    def test_modulo_fields_correlati_fieldset(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Modulo").json()
+        self.assertEqual(resp["fieldsets"][2]["fields"], ["relatedItems"])
+
+    def test_modulo_fields_categorization_fieldset(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Modulo").json()
+        self.assertEqual(resp["fieldsets"][3]["fields"], ["subjects", "language"])
+
+    def test_modulo_fields_dates_fieldset(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Modulo").json()
+        self.assertEqual(resp["fieldsets"][4]["fields"], ["effective", "expires"])
+
+    def test_modulo_fields_ownership_fieldset(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Modulo").json()
+        self.assertEqual(
+            resp["fieldsets"][5]["fields"], ["creators", "contributors", "rights"]
+        )
 
 
 # class TestModuloSchema(unittest.TestCase):

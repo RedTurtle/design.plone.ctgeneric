@@ -1,6 +1,7 @@
 """Setup tests for this package."""
 
 from design.plone.ctgeneric.testing import DESIGN_PLONE_CTGENERIC_API_FUNCTIONAL_TESTING
+from design.plone.ctgeneric.testing import HAS_GET_FOLDER_CONTENTS
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import SITE_OWNER_NAME
@@ -30,6 +31,11 @@ class TestBaseSerializer(unittest.TestCase):
     def tearDown(self):
         self.api_session.close()
 
+    @unittest.skipIf(
+        not HAS_GET_FOLDER_CONTENTS,
+        "design.plone.contenttypes folder serializer uses getFolderContents, "
+        "removed in this Plone version",
+    )
     def test_design_italia_meta_type_news_with_tipologia(self):
         """
         News should return the news type (tipologia_notizia field)
@@ -48,6 +54,11 @@ class TestBaseSerializer(unittest.TestCase):
             news.tipologia_notizia,
         )
 
+    @unittest.skipIf(
+        not HAS_GET_FOLDER_CONTENTS,
+        "design.plone.contenttypes folder serializer uses getFolderContents, "
+        "removed in this Plone version",
+    )
     def test_design_italia_meta_type_news_without_tipologia(self):
         """
         News should return the news type (tipologia_notizia field)
@@ -65,6 +76,11 @@ class TestBaseSerializer(unittest.TestCase):
             "Notizie e comunicati stampa",
         )
 
+    @unittest.skipIf(
+        not HAS_GET_FOLDER_CONTENTS,
+        "design.plone.contenttypes folder serializer uses getFolderContents, "
+        "removed in this Plone version",
+    )
     def test_design_italia_meta_type_with_type_different_from_news(self):
         """
         News should return the news type (tipologia_notizia field)
