@@ -29,6 +29,16 @@ PLONE_VOLTO_PREVIEW_FIELDSETS = package_version("plone.volto") >= (5, 1)
 # Document and News Item. Since Plone 6.1 discussion is an optional add-on.
 CORE_TYPES_ALLOW_DISCUSSION = package_version("plone.app.contenttypes") < (4, 0)
 
+# redturtle.bandi enables discussion with the old dotted name
+# plone.app.dexterity.behaviors.discussion.IAllowDiscussion: in Plone 6.1 its
+# backward compatibility alias points to a wrong module, so it can't be resolved
+try:
+    from plone.app.dexterity.behaviors.discussion import IAllowDiscussion  # noqa: F401
+
+    OLD_ALLOW_DISCUSSION_DOTTED_NAME = True
+except ImportError:
+    OLD_ALLOW_DISCUSSION_DOTTED_NAME = False
+
 # getFolderContents skin script has been removed in newer Plone versions, but
 # design.plone.contenttypes folder serializer still uses it
 HAS_GET_FOLDER_CONTENTS = os.path.exists(

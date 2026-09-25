@@ -1,6 +1,7 @@
 from design.plone.contenttypes.tests import test_ct_bando as base
 from design.plone.ctgeneric.testing import DESIGN_PLONE_CTGENERIC_API_FUNCTIONAL_TESTING
 from design.plone.ctgeneric.testing import get_fieldset_fields
+from design.plone.ctgeneric.testing import OLD_ALLOW_DISCUSSION_DOTTED_NAME
 from design.plone.ctgeneric.testing import PLONE_VOLTO_PREVIEW_FIELDSETS
 
 
@@ -64,6 +65,22 @@ class TestBandoSchema(base.TestBandoSchema):
                 "correlato_in_evidenza",
             ],
         )
+
+    def test_bando_fields_settings_fieldset(self):
+        """
+        Get the list from restapi
+        """
+        resp = self.api_session.get("@types/Bando").json()
+        expected = [
+            "exclude_from_nav",
+            "id",
+            "versioning_enabled",
+            "table_of_contents",
+            "changeNote",
+        ]
+        if OLD_ALLOW_DISCUSSION_DOTTED_NAME:
+            expected.insert(0, "allow_discussion")
+        self.assertEqual(resp["fieldsets"][2]["fields"], expected)
 
     def test_bando_fields_categorization_fieldset(self):
         """
