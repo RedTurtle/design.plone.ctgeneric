@@ -1,10 +1,15 @@
 Changelog
 =========
 
-1.0.9 (unreleased)
+1.1.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Configured the package with plone.meta; CI now only tests Plone 6.0, 6.1 and 6.2 on Python 3.11+.
+  [mamico]
+- Fixed tests: apply ctgeneric and design.plone.contenttypes SchemaTweaks in test layers,
+  do not run design.plone.contenttypes base tests twice, update expected values to current
+  schemas and handle plone.volto/Plone version differences.
+  [cekk]
 
 
 1.0.8 (2026-09-15)

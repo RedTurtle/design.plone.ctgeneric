@@ -5,10 +5,14 @@
         i18n:domain="plone"
 >
 
-  <property name="behaviors" purge="False"> 
-    <element value="design.plone.contenttypes.behavior.news_v2"/>
+  <property name="behaviors"
+            purge="False"
+  >
+    <element value="design.plone.contenttypes.behavior.news_v2" />
     <!-- Remove from v3 -->
-    <element value="collective.taxonomy.generated.tipologia_notizia" remove="True" />
+    <element remove="True"
+             value="collective.taxonomy.generated.tipologia_notizia"
+    />
   </property>
 
 </object>

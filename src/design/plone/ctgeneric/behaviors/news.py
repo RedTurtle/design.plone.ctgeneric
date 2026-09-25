@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.ctgeneric import _
 from plone.app.contenttypes.interfaces import INewsItem
 from plone.autoform import directives as form
@@ -28,7 +27,7 @@ class INewsV2(model.Schema):
 
 @implementer(INewsV2)
 @adapter(INewsItem)
-class NewsV2(object):
+class NewsV2:
     """ """
 
     def __init__(self, context):
