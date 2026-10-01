@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.ctgeneric import _
 from plone.restapi.controlpanels.interfaces import IControlpanel
 from zope.interface import Interface

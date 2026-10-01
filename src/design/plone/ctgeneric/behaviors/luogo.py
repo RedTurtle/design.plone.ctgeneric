@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.ctgeneric import _
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent
@@ -74,7 +73,7 @@ class ILuogoV2(model.Schema):
 
 @implementer(ILuogoV2)
 @adapter(IDexterityContent)
-class LuogoV2(object):
+class LuogoV2:
     """ """
 
     def __init__(self, context):

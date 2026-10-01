@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.ctgeneric.behaviors.persona import IPersonaV2
 from plone.indexer.decorator import indexer
 

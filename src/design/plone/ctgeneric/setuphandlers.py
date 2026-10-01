@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from plone.registry.interfaces import IRegistry
 from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFPlone.interfaces import ISearchSchema
@@ -7,7 +6,7 @@ from zope.interface import implementer
 
 
 @implementer(INonInstallable)
-class HiddenProfiles(object):
+class HiddenProfiles:
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller."""
         return [

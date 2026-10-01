@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.ctgeneric.interfaces import IDesignPloneV2Settings
 from design.plone.ctgeneric.interfaces import IDesignPloneV2SettingsControlpanel
 from plone.restapi.controlpanels import RegistryConfigletPanel

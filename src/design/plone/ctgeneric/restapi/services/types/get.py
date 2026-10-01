@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.contenttypes.restapi.services.types.get import TypesGet as BaseGet
 from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse

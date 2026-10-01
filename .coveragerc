@@ -1,6 +1,6 @@
 [report]
 include =
-    src/design.plone/*
+    src/design/plone/ctgeneric/*
 omit =
     */test*
     */upgrades/*

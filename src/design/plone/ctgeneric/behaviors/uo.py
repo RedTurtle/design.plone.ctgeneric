@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.geolocationbehavior.geolocation import IGeolocatable
 from collective.volto.blocksfield.field import BlocksField
 from design.plone.contenttypes.interfaces.unita_organizzativa import IUnitaOrganizzativa
@@ -48,7 +47,7 @@ class IUnitaOrganizzativaV2(model.Schema, IGeolocatable):
 
 @implementer(IUnitaOrganizzativaV2)
 @adapter(IUnitaOrganizzativa)
-class UnitaOrganizzativaV2(object):
+class UnitaOrganizzativaV2:
     """"""
 
     def __init__(self, context):

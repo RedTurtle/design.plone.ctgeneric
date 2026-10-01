@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.ctgeneric.utils import get_settings_for_language
 from zope.interface import implementer
 from zope.schema.interfaces import IVocabularyFactory
@@ -7,11 +6,10 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 import logging
 
-
 logger = logging.getLogger(__name__)
 
 
-class BaseVocabulary(object):
+class BaseVocabulary:
     def __call__(self, context):
         values = get_settings_for_language(field=self.field)
         if not values:

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.ctgeneric import _
 from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
@@ -28,7 +27,7 @@ class IDocumentoV2(model.Schema):
 
 @implementer(IDocumentoV2)
 @adapter(IDexterityContent)
-class DocumentoV2(object):
+class DocumentoV2:
     """ """
 
     def __init__(self, context):

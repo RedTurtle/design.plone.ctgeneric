@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.ctgeneric.testing import DESIGN_PLONE_CTGENERIC_API_FUNCTIONAL_TESTING
 from plone import api
 from plone.app.testing import setRoles
@@ -62,7 +61,7 @@ class SummarySerializerTest(unittest.TestCase):
 
         # test also with restapi call
         response = self.api_session.get(
-            "{}/@search?portal_type=Persona&id=mario-rossi".format(self.portal_url)
+            f"{self.portal_url}/@search?portal_type=Persona&id=mario-rossi"
         )
 
         result = response.json()
@@ -72,7 +71,7 @@ class SummarySerializerTest(unittest.TestCase):
         self.assertEqual(items[0]["ruolo"], None)
 
         response = self.api_session.get(
-            "{}/@search?portal_type=Persona&id=john-doe".format(self.portal_url)
+            f"{self.portal_url}/@search?portal_type=Persona&id=john-doe"
         )
 
         result = response.json()

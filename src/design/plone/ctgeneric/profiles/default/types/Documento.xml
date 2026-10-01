@@ -4,16 +4,28 @@
         name="Documento"
         i18n:domain="design.plone.contenttypes"
 >
- 
-  <property name="behaviors" purge="false">
+
+  <property name="behaviors"
+            purge="false"
+  >
     <element value="design.plone.contenttypes.behavior.documento_v2" />
 
     <!-- remove v3 behaviors -->
-    <element value="collective.taxonomy.generated.person_life_events" remove="true" />
-    <element value="collective.taxonomy.generated.business_events" remove="true" />
-    <element value="collective.taxonomy.generated.tipologia_documenti_albopretorio" remove="true" />
-    <element value="collective.taxonomy.generated.tipologia_documento" remove="true" />
-    <element value="collective.taxonomy.generated.tipologia_licenze" remove="true" />
+    <element remove="true"
+             value="collective.taxonomy.generated.person_life_events"
+    />
+    <element remove="true"
+             value="collective.taxonomy.generated.business_events"
+    />
+    <element remove="true"
+             value="collective.taxonomy.generated.tipologia_documenti_albopretorio"
+    />
+    <element remove="true"
+             value="collective.taxonomy.generated.tipologia_documento"
+    />
+    <element remove="true"
+             value="collective.taxonomy.generated.tipologia_licenze"
+    />
 
   </property>
 

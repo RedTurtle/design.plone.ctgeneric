@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.contenttypes.interfaces.unita_organizzativa import IUnitaOrganizzativa
 from design.plone.ctgeneric.interfaces import IDesignPloneCtgenericLayer
 from plone.restapi.deserializer.dxcontent import DeserializeFromJson
