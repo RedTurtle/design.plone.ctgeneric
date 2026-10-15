@@ -4,11 +4,15 @@
         name="Persona"
         i18n:domain="design.plone.contenttypes"
 >
-  <property name="behaviors" purge="false">
+  <property name="behaviors"
+            purge="false"
+  >
     <element value="design.plone.contenttypes.behavior.persona_v2" />
 
     <!-- remove from v3 -->
-    <element remove="True" value="design.plone.contenttypes.behavior.contatti_persona" />
+    <element remove="True"
+             value="design.plone.contenttypes.behavior.contatti_persona"
+    />
   </property>
 
 </object>

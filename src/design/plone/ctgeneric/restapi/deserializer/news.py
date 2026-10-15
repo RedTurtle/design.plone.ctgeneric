@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.ctgeneric.interfaces import IDesignPloneCtgenericLayer
 from plone.app.contenttypes.interfaces import INewsItem
 from plone.restapi.deserializer.dxcontent import DeserializeFromJson

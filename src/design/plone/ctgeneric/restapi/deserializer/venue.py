@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.venue.interfaces import IVenue
 from design.plone.ctgeneric.interfaces import IDesignPloneCtgenericLayer
 from plone.restapi.deserializer.dxcontent import DeserializeFromJson

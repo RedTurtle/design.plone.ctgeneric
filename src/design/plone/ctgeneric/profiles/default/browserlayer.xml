@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <layers>
-  <layer
-      name="design.plone.ctgeneric"
-      interface="design.plone.ctgeneric.interfaces.IDesignPloneCtgenericLayer"
-      />
+  <layer interface="design.plone.ctgeneric.interfaces.IDesignPloneCtgenericLayer"
+         name="design.plone.ctgeneric"
+  />
 </layers>

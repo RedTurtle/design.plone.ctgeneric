@@ -13,13 +13,12 @@ from zope.interface import Interface
 
 import logging
 
-
 logger = logging.getLogger(__name__)
 
 
 @implementer(ISchemaPlugin)
 @adapter(IFormFieldProvider)
-class SchemaTweaks(object):
+class SchemaTweaks:
     """
     Fix fields for content-types to be like v2 of design.plone.contenttypes
     """

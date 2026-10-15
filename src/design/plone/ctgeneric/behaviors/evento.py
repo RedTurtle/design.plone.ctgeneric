@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from design.plone.ctgeneric import _
 from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
@@ -80,7 +79,7 @@ class IEventoV2(model.Schema):
 
 @implementer(IEventoV2)
 @adapter(IDexterityContent)
-class EventoV2(object):
+class EventoV2:
     """ """
 
     def __init__(self, context):

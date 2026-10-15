@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # from plone import api
 from design.plone.ctgeneric import _
 from plone.dexterity.interfaces import IDexterityContent
@@ -10,14 +8,14 @@ from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 
-class VocabItem(object):
+class VocabItem:
     def __init__(self, token, value):
         self.token = token
         self.value = value
 
 
 @implementer(IVocabularyFactory)
-class DocumentTypesVocabulary(object):
+class DocumentTypesVocabulary:
     """ """
 
     def __call__(self, context):
