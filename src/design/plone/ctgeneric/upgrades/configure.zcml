@@ -12,4 +12,13 @@
       handler=".upgrades.update_controlpanel"
       />
 
+  <genericsetup:upgradeStep
+      title="Upgrade to 1002"
+      description="Remove tipologia_notizia taxonomy and replace its index"
+      profile="design.plone.ctgeneric:default"
+      source="1001"
+      destination="1002"
+      handler=".upgrades.to_1002"
+      />
+
 </configure>

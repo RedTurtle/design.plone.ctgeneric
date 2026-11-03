@@ -1,3 +1,5 @@
+from design.plone.ctgeneric.setuphandlers import remove_tipologia_notizia_taxonomy
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -33,3 +35,7 @@ def update_catalog(context):
 
 def update_controlpanel(context):
     update_profile(context, "controlpanel")
+
+
+def to_1002(context):
+    remove_tipologia_notizia_taxonomy(context)

@@ -4,7 +4,12 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove the ``tipologia_notizia`` collective.taxonomy taxonomy (behavior, index, local indexer
+  and querystring records) and replace its index with a plain FieldIndex that indexes the
+  ``news_v2`` behavior value. The ``tipologia_notizia`` querystring criterion now uses the
+  ``design.plone.vocabularies.tipologie_notizia`` vocabulary.
+  Upgrade step to 1002 cleans existing sites and reindexes news.
+  [cekk]
 
 
 1.1.0 (2026-10-15)
