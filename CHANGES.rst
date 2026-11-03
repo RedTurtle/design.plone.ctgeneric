@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.1 (unreleased)
+1.2.0 (2026-11-03)
 ------------------
 
 - Remove the ``tipologia_notizia`` collective.taxonomy taxonomy (behavior, index, local indexer
