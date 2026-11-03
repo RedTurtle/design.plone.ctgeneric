@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object name="portal_catalog">
+  <!-- replaces the collective.taxonomy one (removed in setuphandlers) -->
+  <index meta_type="FieldIndex"
+         name="tipologia_notizia"
+  >
+    <indexed_attr value="tipologia_notizia" />
+  </index>
   <column value="ruolo" />
+  <column value="tipologia_notizia" />
 </object>
