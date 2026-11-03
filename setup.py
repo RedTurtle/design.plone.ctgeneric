@@ -55,6 +55,7 @@ setup(
         "setuptools",
         "design.plone.contenttypes>=6.2.11",
         "collective.monkeypatcher",
+        "collective.taxonomy",
         "collective.address",
         "collective.geolocationbehavior",
         "collective.venue",
